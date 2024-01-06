@@ -336,18 +336,20 @@ const products = [
   }
 ];
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   console.log(req.query)
   const query = req.query
   res.json(query)
 })
 
-app.get('/products', function(req, res) {
+app.get('/products', function (req, res) {
   res.header("Access-Control-Allow-Origin", "https://fitmerch.netlify.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.json(products);
 })
 
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log('connected')
 })
 
