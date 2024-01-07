@@ -3,7 +3,7 @@ const cors = require('cors')
 
 const app = express();
 
-app.use(cors({ origin: 'https://fitmerch.netlify.app' }));
+app.use(cors({ origin: '*' }));
 
 const products = [
   {
